@@ -34,7 +34,7 @@ async function startserver() {
     await con("blog");
     Item = mongoose.model("Item", blue_print);
     app.listen(4000, () => {
-      console.log("http://127.0.0.1:4000");
+      console.log("application started");
     });
   } catch (er) {
     console.log(er.message);
