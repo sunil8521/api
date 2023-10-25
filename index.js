@@ -61,9 +61,13 @@ const find = async (number) => {
     throw error;
   }
 };
+
+app.get("/", async (req, res) => {
+  
+  res.json({message:"Hello, there!"});
+});
 app.get("/getall", async (req, res) => {
   let val = await fetch();
-
   res.json(val);
 });
 app.get("/getall/:id", async (req, res) => {
