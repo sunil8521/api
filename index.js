@@ -1,8 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
-
 import { con } from "./db.js";
+
 const app = express();
+const port = process.env.PORT || 3000;
 const date = new Date();
 const isoString = date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
 let Item;
@@ -33,7 +34,7 @@ async function startserver() {
   try {
     await con("blog");
     Item = mongoose.model("Item", blue_print);
-    app.listen(4000, () => {
+    app.listen(port, () => {
       console.log("application started");
     });
   } catch (er) {
