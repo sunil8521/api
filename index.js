@@ -5,7 +5,7 @@ import { con } from "./db.js";
 const app = express();
 const port = process.env.PORT || 3000;
 const date = new Date();
-const isoString = date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+const isoString = date.toLocaleString().split(",")[0];
 let Item;
 const blue_print = {
   displayId: {
